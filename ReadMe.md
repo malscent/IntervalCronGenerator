@@ -40,6 +40,7 @@ To uses the CLI.
 * Install the tool
 `dotnet tool install IntervalCronGeneratorCLI --global`
 * Run the tool with `icg ConvertInterval <interval> <Unit>`
+* Running `icg --help` will provide help information regarding the available command.
 
 Interval is the amount of time between executions.
 Units can be Hour, Minute, or Second.
