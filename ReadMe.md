@@ -20,7 +20,7 @@ Generating these cron expressions can be tedious and error prone.  So I wrote In
 IntervalCronGenerator has a CLI and a Nuget Package.   You can either install the nuget package in your application and use the CronGenerator class or install the tool CLI.
 
 ```
-dotnet add package IntervalCronGenerator.Core --version 1.0.1
+dotnet add package IntervalCronGenerator.Core
 dotnet tool install IntervalCronGeneratorCLI --global
 ```
 
