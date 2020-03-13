@@ -17,10 +17,11 @@ Generating these cron expressions can be tedious and error prone.  So I wrote In
 
 ## Usage
 
-IntervalCronGenerator has a CLI and a Nuget Package.  (Coming soon, a tool!)  You can either install the nuget package in your application and use the CronGenerator class or fork/clone the repo and use the CLI.
+IntervalCronGenerator has a CLI and a Nuget Package.   You can either install the nuget package in your application and use the CronGenerator class or install the tool CLI.
 
 ```
 dotnet add package IntervalCronGenerator.Core --version 1.0.1
+dotnet tool install IntervalCronGeneratorCLI --global
 ```
 
 CronGenerator implements the following methods for converting your interval to a set of cron expressions:
@@ -36,7 +37,10 @@ CronGenerator implements the following methods for converting your interval to a
 
 Simply choose the one that matches the time frame you have.
 
-To uses the CLI. 
+To uses the CLI.
+
+![cli_usage](https://imgur.com/gfQfkEf.jpg)
+
 * Install the tool
 `dotnet tool install IntervalCronGeneratorCLI --global`
 * Run the tool with `icg ConvertInterval <interval> <Unit>`
