@@ -19,3 +19,5 @@ jobs:
         INTERVAL_CRON_GENERATOR_KEY: ${{ secrets.INTERVAL_CRON_GENERATOR_KEY }}
     - name: Build and Publish
       run: bash ./publish.sh
+      env: # Or as an environment variable
+        INTERVAL_CRON_GENERATOR_KEY: ${{ secrets.INTERVAL_CRON_GENERATOR_KEY }}
