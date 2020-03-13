@@ -3,12 +3,12 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
         <PackageId>IntervalCronGenerator.Core</PackageId>
-        <Version>1.0.0</Version>
+        <Version>1.0.1</Version>
         <Authors>Justin Ashworth</Authors>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Description>This is a library for generating a set of cron expresssions to represent an interval.</Description>
         <RepositoryUrl>https://github.com/malscent/IntervalCronGenerator</RepositoryUrl>
-        <PackageLicenseUrl>https://github.com/malscent/IntervalCronGenerator/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageLicense>https://github.com/malscent/IntervalCronGenerator/blob/master/LICENSE</PackageLicense>
     </PropertyGroup>
 
 </Project>
