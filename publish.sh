@@ -8,7 +8,7 @@ export BUILD_DIR="./build"
 export TOOL_DIR="./IntervalCronGeneratorCLI/"
 export TOOL_PROJECT_NAME="IntervalCronGeneratorCLI.csproj"
 
-set -euo pipefail
+set -eu
 
 project=$(basename -s .csproj "$CSPROJ_PATH$PROJECT_NAME")
 version=$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' "$CSPROJ_PATH$PROJECT_NAME")
