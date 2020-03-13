@@ -3,6 +3,7 @@
 
 [![Nuget Package](https://badgen.net/nuget/v/IntervalCronGenerator.core)](https://www.nuget.org/packages/IntervalCronGenerator.Core/)
 [![CLI](https://badgen.net/nuget/v/IntervalCronGeneratorCLI)](https://www.nuget.org/packages/IntervalCronGeneratorCLI/)
+![Test](https://github.com/malscent/IntervalCronGenerator/workflows/Test/badge.svg)
 ## Introduction
 
 Have you ever needed to create a cron expression to represent some interval, that cannot be simply represented with a single cron expression?  What does a 45 second cron expression look like?
