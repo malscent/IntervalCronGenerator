@@ -37,8 +37,9 @@ CronGenerator implements the following methods for converting your interval to a
 Simply choose the one that matches the time frame you have.
 
 To uses the CLI. 
-* Change to the IntervalCronGeneratorCLI
-* Run `dotnet run -- ConvertInterval <INTERVAL> <UNIT>`
+* Install the tool
+`dotnet tool install IntervalCronGeneratorCLI --global`
+* Run the tool with `icg ConvertInterval <interval> <Unit>`
 
 Interval is the amount of time between executions.
 Units can be Hour, Minute, or Second.
