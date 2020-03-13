@@ -1,4 +1,4 @@
-#Interval Cron Generator
+# Interval Cron Generator
 ## Simplify the generation of multiple cron expressions to represent an interval
 
 [![Nuget Package](https://badgen.net/nuget/v/IntervalCronGenerator.Core)](https://www.nuget.org/packages/IntervalCronGenerator.Core/)
