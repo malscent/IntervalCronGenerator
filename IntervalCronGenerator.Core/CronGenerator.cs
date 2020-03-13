@@ -19,9 +19,19 @@ namespace IntervalCronGenerator.Core
             switch (unit)
             {
                 case Units.Hour:
+                case Units.Hours:
+                case Units.HOUR:
+                case Units.HOURS:
+                case Units.hour:
+                case Units.hours:
                     values = _converter.ConvertToCronTabExpression(interval * Constants.SECONDS_IN_A_HOUR);
                     break;
                 case Units.Minute:
+                case Units.Minutes:
+                case Units.MINUTE:
+                case Units.MINUTES:
+                case Units.minute:
+                case Units.minutes:
                     values = _converter.ConvertToCronTabExpression(interval * Constants.SECONDS_IN_A_MINUTE);
                     break;
                 default:

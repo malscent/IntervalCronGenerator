@@ -1,10 +1,13 @@
 using System;
 using IntervalCronGenerator.Core;
+using CommandDotNet;
 
 namespace IntervalCronGeneratorCLI
 {
     public class CronCLI
     {
+        [DefaultMethod]
+        [Command(Name = "convert", Usage = "convert <int> <unit>", Description="Converts the interval into a set of cron expressions")]    
         public void ConvertInterval(int interval, Units unit)
         {
             var icg = new CronGenerator();

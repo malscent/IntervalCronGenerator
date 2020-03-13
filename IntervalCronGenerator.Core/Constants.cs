@@ -4,7 +4,9 @@ namespace IntervalCronGenerator.Core
 {
     public enum Units
     {
-        Hour, Minute, Second
+        Hour, Hours, HOUR, HOURS, hour, hours, 
+        Minute, Minutes, minute, minutes, MINUTE, MINUTES, 
+        Second, Seconds, second, seconds, SECOND, SECONDS
     }
 
     public class Constants
