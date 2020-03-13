@@ -39,7 +39,7 @@ Simply choose the one that matches the time frame you have.
 
 To uses the CLI.
 
-![cli_usage](https://imgur.com/gfQfkEf.jpg)
+![cli_usage](https://imgur.com/SoQ70oN.jpg)
 
 * Install the tool
 `dotnet tool install IntervalCronGeneratorCLI --global`
