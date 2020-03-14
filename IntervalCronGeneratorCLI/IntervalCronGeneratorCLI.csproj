@@ -6,7 +6,7 @@
         <PackAsTool>true</PackAsTool>
         <ToolCommandName>icg</ToolCommandName>
         <PackageOutputPath>../build/</PackageOutputPath>
-        <Version>1.0.3</Version>
+        <Version>1.0.4</Version>
         <PackageLicense>https://github.com/malscent/IntervalCronGenerator/blob/master/LICENSE</PackageLicense>
     </PropertyGroup>
 
