@@ -3,6 +3,9 @@
 
 [![Nuget Package](https://badgen.net/nuget/v/IntervalCronGenerator.core)](https://www.nuget.org/packages/IntervalCronGenerator.Core/)
 [![CLI](https://badgen.net/nuget/v/IntervalCronGeneratorCLI)](https://www.nuget.org/packages/IntervalCronGeneratorCLI/)
+![Test](https://github.com/malscent/IntervalCronGenerator/workflows/Test/badge.svg)
+![Publish Nuget Packages](https://github.com/malscent/IntervalCronGenerator/workflows/Publish%20Nuget%20Packages/badge.svg)
+
 ## Introduction
 
 Have you ever needed to create a cron expression to represent some interval, that cannot be simply represented with a single cron expression?  What does a 45 second cron expression look like?
@@ -39,15 +42,22 @@ Simply choose the one that matches the time frame you have.
 
 To uses the CLI.
 
-![cli_usage](https://imgur.com/SoQ70oN.jpg)
+![cli_usage](https://imgur.com/yMnpphZ.jpg)
 
 * Install the tool
 `dotnet tool install IntervalCronGeneratorCLI --global`
-* Run the tool with `icg <interval> <Unit>`
+* Run the tool with `icg <interval> <Unit> <command> (OPTIONAL) --seconds (OPTIONAL)`
 * Running `icg --help` will provide help information regarding the available command.
 
-Interval is the amount of time between executions.
-Units can be Hour, Minute, or Second (Case Insensitive'ish).
+Interval: the amount of time between executions.
+
+Units: Hour, Minute, or Second (Case Insensitive'ish).
+
+Command (OPTIONAL): command you want to execute on the interval (For copy/paste to Crontab)
+
+--seconds (-s)(OPTIONAL): specify whether to return the seconds column or not.  Not all cron implementations support seconds.
+
+_Cannot use "seconds" unit without --seconds or -s_ 
 
 ## Caveats
 
