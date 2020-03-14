@@ -46,12 +46,14 @@ To uses the CLI.
 
 * Install the tool
 `dotnet tool install IntervalCronGeneratorCLI --global`
-* Run the tool with `icg <interval> <Unit>`
+* Run the tool with `icg <interval> <Unit> <command> (OPTIONAL) --seconds (OPTIONAL)`
 * Running `icg --help` will provide help information regarding the available command.
 
-Interval is the amount of time between executions.
-Units can be Hour, Minute, or Second (Case Insensitive'ish).
-
+Interval: the amount of time between executions.
+Units: Hour, Minute, or Second (Case Insensitive'ish).
+Command (OPTIONAL): command you want to execute on the interval (For copy/paste to Crontab)
+--seconds (-s)(OPTIONAL): specify whether to return the seconds column or not.  Not all cron implementations support seconds.
+_Cannot use "seconds" unit without --seconds or -s_ 
 ## Caveats
 
 This will only guarantee executions up to 24 hours.  If your interval does not evenly divide into 86,400 seconds, then the duration of the last execution of the day and the first of the following day will be shorter than the specified interval.  This may change in the future, but for now, keep this in mind when choosing your interval.
