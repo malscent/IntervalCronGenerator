@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace IntervalCronGenerator.Core
 {
     public class CronGenerator : IIntervalCronGenerator
     {
         private readonly SecondIntervalToCronConverter _converter = new SecondIntervalToCronConverter();
+        private readonly ICronPostProcessor _processor = new DefaultPostProcessor();
         
         /// <summary>
         /// Converts an interval into a set of cron expressions representing that interval
@@ -24,7 +26,7 @@ namespace IntervalCronGenerator.Core
                 case Units.HOURS:
                 case Units.hour:
                 case Units.hours:
-                    values = _converter.ConvertToCronTabExpression(interval * Constants.SECONDS_IN_A_HOUR);
+                    values = _converter.ConvertToCronTabExpression(interval * Constants.SECONDS_IN_A_HOUR).Select(x => _processor.PostProcess(x));
                     break;
                 case Units.Minute:
                 case Units.Minutes:
@@ -32,10 +34,10 @@ namespace IntervalCronGenerator.Core
                 case Units.MINUTES:
                 case Units.minute:
                 case Units.minutes:
-                    values = _converter.ConvertToCronTabExpression(interval * Constants.SECONDS_IN_A_MINUTE);
+                    values = _converter.ConvertToCronTabExpression(interval * Constants.SECONDS_IN_A_MINUTE).Select(x => _processor.PostProcess(x));
                     break;
                 default:
-                    values = _converter.ConvertToCronTabExpression(interval);
+                    values = _converter.ConvertToCronTabExpression(interval).Select(x => _processor.PostProcess(x));
                     break;
             }
 
@@ -48,7 +50,7 @@ namespace IntervalCronGenerator.Core
         /// <returns>Returns a collection of cron expressions</returns>
         public IEnumerable<string> ConvertIntervalSeconds(int seconds)
         {
-            return _converter.ConvertToCronTabExpression(seconds);
+            return _converter.ConvertToCronTabExpression(seconds).Select(x => _processor.PostProcess(x));
         }
         /// <summary>
         /// Converts an interval of seconds into a set of cron expressions
@@ -57,7 +59,7 @@ namespace IntervalCronGenerator.Core
         /// <returns>Returns a collection of cron expressions</returns>
         public IEnumerable<string> ConvertIntervalMinutes(int minutes)
         {
-            return _converter.ConvertToCronTabExpression(minutes * Constants.SECONDS_IN_A_MINUTE);
+            return _converter.ConvertToCronTabExpression(minutes * Constants.SECONDS_IN_A_MINUTE).Select(x => _processor.PostProcess(x));
         }
         /// <summary>
         /// Converts an interval of hours into a set of cron expressions.
@@ -66,7 +68,7 @@ namespace IntervalCronGenerator.Core
         /// <returns>Returns a collection of cron expressions</returns>
         public IEnumerable<string> ConvertIntervalHours(int hours)
         {
-            return _converter.ConvertToCronTabExpression(hours * Constants.SECONDS_IN_A_HOUR);
+            return _converter.ConvertToCronTabExpression(hours * Constants.SECONDS_IN_A_HOUR).Select(x => _processor.PostProcess(x));
         }
         /// <summary>
         /// Converts an interval of hours, minutes and seconds to a set of cron expressions
@@ -78,7 +80,7 @@ namespace IntervalCronGenerator.Core
         public IEnumerable<string> ConvertInterval(int hours, int minutes, int seconds)
         {
             return _converter.ConvertToCronTabExpression((hours * Constants.SECONDS_IN_A_HOUR) +
-                                                         (minutes * Constants.SECONDS_IN_A_MINUTE) + seconds);
+                                                         (minutes * Constants.SECONDS_IN_A_MINUTE) + seconds).Select(x => _processor.PostProcess(x));
         }
         /// <summary>
         /// Converts a timespan interval into a set of cron expressions
@@ -92,7 +94,7 @@ namespace IntervalCronGenerator.Core
             {
                 throw new ArgumentOutOfRangeException(nameof(interval));
             }
-            return _converter.ConvertToCronTabExpression(Convert.ToInt32(interval.TotalSeconds));
+            return _converter.ConvertToCronTabExpression(Convert.ToInt32(interval.TotalSeconds)).Select(x => _processor.PostProcess(x));
         }
     }
 }
