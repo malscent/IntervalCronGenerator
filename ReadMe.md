@@ -68,7 +68,7 @@ This will only guarantee executions up to 24 hours.  If your interval does not e
 ## Contributions
 This application was written using .Net Core 3.1.  You will need that installed.
 
-Submitions, issues, and PRs are welcome.  Please run the unit tests before creating a PR.
+Submitions, issues, and PRs are welcome.  Tests run automatically when you create a PR.
 
 Enjoy
 
