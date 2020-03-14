@@ -60,10 +60,9 @@ namespace IntervalCronGenerator.Core
                 //setting our combinations in a dictionary we can modify.
                 foreach (var combo in combinations)
                 {
-                    var minutes = (combo.Key == Constants.ALL_MINUTES) ? "*" : combo.Key;
                     var value = Constants.HOURS_PLACEHOLDER.Replace(Constants.HOURS_PLACEHOLDER, hour.Key.ToString());
                     var key = $"{Constants.SECONDS_PLACEHOLDER} {Constants.MINUTES_PLACEHOLDER}"
-                                        .Replace(Constants.MINUTES_PLACEHOLDER, minutes)
+                                        .Replace(Constants.MINUTES_PLACEHOLDER, combo.Key)
                                         .Replace(Constants.SECONDS_PLACEHOLDER, string.Join(",", combo.Value));;
 
                     if (combos.ContainsKey(key))
@@ -78,11 +77,7 @@ namespace IntervalCronGenerator.Core
             }
             foreach (var combo in combos)
             {
-                // here just looking for situations where we can replace all hours with *
-                var hours = (combo.Value == Constants.ALL_HOURS)
-                    ? "*"
-                    : combo.Value;
-                var expression = $"{combo.Key} {hours} * * *";
+                var expression = $"{combo.Key} {combo.Value} * * *";
                 expressions.Add(expression);
             }
 
