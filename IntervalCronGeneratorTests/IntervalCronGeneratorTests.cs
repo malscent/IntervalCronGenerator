@@ -56,7 +56,7 @@ namespace IntervalCronGeneratorTests
         [Fact]
         public void GeneratesCorrectFromHoursMinutes()
         {
-            var results = _generator.ConvertInterval(1, 30, 0);
+            var results = _generator.ConvertInterval(1, 30, 0).ToArray();
             
             Assert.Contains(results, s => s == "0 0 0/3 * * *");
             Assert.Contains(results, s => s == "0 30 1/3 * * *");
