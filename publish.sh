@@ -31,7 +31,8 @@ if [ "$GIT_BRANCH" == "master" ]; then
     tool_file=./build/$toolproject.$tool_version.nupkg
     version_suffix=''
 fi
-dotnet build "$CSPROJ_PATH$PROJECT_NAME" --configuration Release
+dotnet build "$CSPROJ_PATH$PROJECT_NAME" --configuration Release --framework netstandard2.0
+dotnet build "$CSPROJ_PATH$PROJECT_NAME" --configuration Release --framework netstandard2.1
 dotnet pack "$CSPROJ_PATH$PROJECT_NAME" -o "$BUILD_DIR" --include-symbols $version_suffix
 dotnet pack "$TOOL_DIR$TOOL_PROJECT_NAME" -o "$BUILD_DIR" $version_suffix
 
