@@ -33,8 +33,8 @@ if [ "$GIT_BRANCH" == "master" ]; then
 fi
 dotnet build "$CSPROJ_PATH$PROJECT_NAME" --configuration Release --framework netstandard2.0
 dotnet build "$CSPROJ_PATH$PROJECT_NAME" --configuration Release --framework netstandard2.1
-dotnet pack "$CSPROJ_PATH$PROJECT_NAME" -o "$BUILD_DIR" --include-symbols $version_suffix
-dotnet pack "$TOOL_DIR$TOOL_PROJECT_NAME" -o "$BUILD_DIR" $version_suffix
+dotnet pack "$CSPROJ_PATH$PROJECT_NAME" -o "$BUILD_DIR" --include-symbols $version_suffix --configuration Release
+dotnet pack "$TOOL_DIR$TOOL_PROJECT_NAME" -o "$BUILD_DIR" $version_suffix --configuration Release
 
 # Only publish when building on master or develop
 if [ "$GIT_BRANCH" == "master" ] || [ "$GIT_BRANCH" == "develop" ]; then
