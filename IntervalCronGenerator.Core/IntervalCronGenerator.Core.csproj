@@ -1,14 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
         <PackageId>IntervalCronGenerator.Core</PackageId>
-        <Version>1.0.3</Version>
+        <Version>1.0.4</Version>
         <Authors>Justin Ashworth</Authors>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Description>This is a library for generating a set of cron expresssions to represent an interval.</Description>
         <RepositoryUrl>https://github.com/malscent/IntervalCronGenerator</RepositoryUrl>
         <PackageLicense>https://github.com/malscent/IntervalCronGenerator/blob/master/LICENSE</PackageLicense>
+        <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     </PropertyGroup>
 
 </Project>

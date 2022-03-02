@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using System.Runtime.CompilerServices;
 
 namespace IntervalCronGenerator.Core
 {
@@ -8,7 +7,7 @@ namespace IntervalCronGenerator.Core
     {
         public string PostProcess(string cronExpression)
         {
-            var sections = cronExpression.Split(" ");
+            var sections = cronExpression.Split(' ');
             var cron = string.Empty;
             foreach (var section in sections)
             {
