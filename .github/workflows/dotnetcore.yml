@@ -14,9 +14,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: |
-          3.1.x
-          5.0.x
+        dotnet-version: 6.0.x
       env: # Or as an environment variable
         INTERVAL_CRON_GENERATOR_KEY: ${{ secrets.INTERVAL_CRON_GENERATOR_KEY }}
     - name: Build and Publish
